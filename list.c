@@ -15,16 +15,12 @@ struct foo * free_list(struct foo *f);
 
 int main(){
 	srand(time(NULL));
-	char a[20] = "oak";
-  struct foo *oak = insert_front(0, a, 30);
-	strcpy(a, "random");
-  struct foo *random = insert_front(oak, a, rand());
-	strcpy(a, "beech");
-  struct foo *beech = insert_front(random, a, 50);
-	strcpy(a, "holly");
-  struct foo *holly = insert_front(beech, a, 30);
-  print_list(holly);
-  free_list(holly);
+  struct foo *wood = insert_front(0, "oak", 30);
+  wood = insert_front(wood, "random", rand());
+  wood = insert_front(wood, "beech", 50);
+  wood = insert_front(wood, "holly", 30);
+  print_list(wood);
+  free_list(wood);
 	return 0;
 }
 
