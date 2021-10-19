@@ -6,18 +6,15 @@
 
 int main(){
 	srand(time(NULL));
-  char a[20] = "oak";
-  struct foo *wood = insert_front(0, a, 30);
-  strcpy(a, "random");
-  wood = insert_front(wood, a, rand());
-  strcpy(a, "beech");
-  wood = insert_front(wood, a, 50);
-  strcpy(a, "holly");
-  wood = insert_front(wood, a, 30);
+  struct foo *wood = insert_front(0, "oak", 30);
+  wood = insert_front(wood, "random", rand());
+  wood = insert_front(wood, "beech", 50);
+  wood = insert_front(wood, "holly", 30);
   print_list(wood);
-  strcpy(a, "random");
-  print_list(remove_node(wood, a));
+  print_list(remove_node(wood, "random"));
   wood = free_list(wood);
   print_list(wood);
   return 0;
 }
+
+

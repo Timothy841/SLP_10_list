@@ -21,14 +21,14 @@ void print_list(struct foo *f){
 	}
 }
 
-struct foo * make_foo(struct foo *ne, char s[20], int a){
+struct foo * make_foo(struct foo *ne, char *s, int a){
 	struct foo *n = malloc(sizeof(struct foo));
   strncpy(n->c, strcat(s,"\0"), strlen(s));
   n->i = a;
   return n;
 }
 
-struct foo * insert_front(struct foo *ne, char s[20], int a){
+struct foo * insert_front(struct foo *ne, char *s, int a){
   struct foo *n = make_foo(ne, s, a);
   n->next = ne;
   return n;
@@ -47,7 +47,7 @@ struct foo * free_list(struct foo *f){
 	}
 }
 
-struct foo * remove_node(struct foo *front, char data[20]){
+struct foo * remove_node(struct foo *front, char *data){
 	struct foo *temp = front;
 	if (!strcmp(front->c, data)){//if first node is == data
 		front = front->next;
