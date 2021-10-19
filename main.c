@@ -15,8 +15,9 @@ int main(){
   strcpy(a, "holly");
   wood = insert_front(wood, a, 30);
   print_list(wood);
-	strcpy(a, "random");
-	print_list(remove_node(wood, a));
-  free_list(wood);
-	return 0;
+  strcpy(a, "random");
+  print_list(remove_node(wood, a));
+  wood = free_list(wood);
+  print_list(wood);
+  return 0;
 }
